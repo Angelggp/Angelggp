@@ -15,7 +15,7 @@ class Principal(QMainWindow):
         # pagina que se muestra por defecto
         self.stackedWidget.setCurrentIndex(1)
         self.bd = Galeria()
-            
+     
      # eliminar la barra de titulo que viene por defecto en Qt
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setWindowOpacity(1)
@@ -39,6 +39,7 @@ class Principal(QMainWindow):
         self.bt_artista.clicked.connect(lambda: self.visualizar_tabla("Artista"))
         self.bt_telefono.clicked.connect(lambda: self.visualizar_tabla("Teléfono"))
         self.bt_acerca_de.clicked.connect(self.pag_acerca_de)
+        self.bt_tablas.clicked.connect(self.pag_tablas)
 
         # mover ventana
         self.fr_superior.mouseMoveEvent=self.mover_ventana
@@ -88,7 +89,9 @@ class Principal(QMainWindow):
     # Cambiar a la página Acerca de al hacer clic en el botón
     def pag_acerca_de(self):
         self.stackedWidget.setCurrentIndex(0)
-
+    
+    def pag_tablas(self):
+        self.stackedWidget.setCurrentIndex(1)
 
 
     def visualizar_tabla(self, nombre_tabla):

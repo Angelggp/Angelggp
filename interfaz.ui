@@ -538,6 +538,13 @@ QPushButton:hover {
                  </spacer>
                 </item>
                 <item>
+                 <widget class="QPushButton" name="bt_tablas">
+                  <property name="text">
+                   <string>Base de Datos</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <widget class="QPushButton" name="bt_acerca_de">
                   <property name="layoutDirection">
                    <enum>Qt::LeftToRight</enum>

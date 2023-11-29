@@ -255,6 +255,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addWidget(self.bt_telefono)
         spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_3.addItem(spacerItem3)
+        self.bt_tablas = QtWidgets.QPushButton(self.fr_menu)
+        self.bt_tablas.setObjectName("bt_tablas")
+        self.verticalLayout_3.addWidget(self.bt_tablas)
         self.bt_acerca_de = QtWidgets.QPushButton(self.fr_menu)
         self.bt_acerca_de.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.bt_acerca_de.setCheckable(False)
@@ -469,6 +472,7 @@ class Ui_MainWindow(object):
         self.bt_obra.setText(_translate("MainWindow", "Obra"))
         self.bt_artista.setText(_translate("MainWindow", "Artista"))
         self.bt_telefono.setText(_translate("MainWindow", "Telefono"))
+        self.bt_tablas.setText(_translate("MainWindow", "Base de Datos"))
         self.bt_acerca_de.setText(_translate("MainWindow", "Acerca de..."))
         self.text_acerca_de.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
