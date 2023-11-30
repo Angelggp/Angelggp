@@ -5,6 +5,7 @@ from PyQt5.QtCore import QPropertyAnimation
 import icons_rc
 import sys
 from  proyectoGaleríaOK.connSql import Galeria
+from secundaria import Secundaria
 
 class Principal(QMainWindow):
     def __init__(self):
@@ -30,9 +31,6 @@ class Principal(QMainWindow):
         self.bt_minimizar.clicked.connect(self.minimizar)
         self.bt_maximizar.clicked.connect(self.maximizar)
 
-        # boton del menu desplegable
-        #self.bt_menu.clicked.connect(self.menu_desplegar)
-
         # botones del menu 
         self.bt_exposicion.clicked.connect(lambda: self.visualizar_tabla("Exposición"))
         self.bt_obra.clicked.connect(lambda: self.visualizar_tabla("Obra"))
@@ -40,6 +38,9 @@ class Principal(QMainWindow):
         self.bt_telefono.clicked.connect(lambda: self.visualizar_tabla("Teléfono"))
         self.bt_acerca_de.clicked.connect(self.pag_acerca_de)
         self.bt_tablas.clicked.connect(self.pag_tablas)
+
+        # botones crud
+        self.bt_agregar.clicked.connect(lambda: Secundaria().show())
 
         # mover ventana
         self.fr_superior.mouseMoveEvent=self.mover_ventana
@@ -73,18 +74,6 @@ class Principal(QMainWindow):
             self.showMaximized()
         else:
             self.showNormal()
-    '''        
-    def menu_desplegar(self): # despliega el menu
-       
-        width = self.fr_menu.width()
-        estirar = 300 if width == 0 else 0
-        self.animation=QPropertyAnimation(self.fr_menu,b"minimumWidth")
-        self.animation.setDuration(350)
-        self.animation.setStartValue(width)
-        self.animation.setEndValue(estirar)
-        self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
-        self.animation.start()
-    '''
         
     # Cambiar a la página Acerca de al hacer clic en el botón
     def pag_acerca_de(self):
@@ -118,7 +107,36 @@ class Principal(QMainWindow):
                 self.tb_main.setItem(contador, j, QtWidgets.QTableWidgetItem(str(i[j]))) 
             contador += 1
         self.tb_main.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.deshabilitar_edicion(self.tb_main)
 
+
+
+    def deshabilitar_edicion(self, tabla):
+        # Verificar si el argumento es una instancia de QTableWidget
+        if not isinstance(tabla, QtWidgets.QTableWidget):
+            raise TypeError("El argumento debe ser un objeto QTableWidget")
+
+        # Definir la bandera que desactiva la edición
+        flags = QtCore.Qt.ItemFlags(~QtCore.Qt.ItemIsEditable)
+
+        # Iterar sobre todas las celdas de la tabla
+        for row in range(tabla.rowCount()):
+            for colum in range(tabla.columnCount()):
+                # Obtener el objeto QTableWidgetItem en la celda actual
+                item = tabla.item(row, colum)
+
+                # Verificar si la celda contiene un objeto QTableWidgetItem
+                if item is not None:
+                    # Establecer las flags para desactivar la edición
+                    item.setFlags(flags)
+
+
+    
+    def editar_item(self):
+        pass
+
+    def eliminar_item(self):
+        pass
 
 
 

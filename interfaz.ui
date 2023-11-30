@@ -583,7 +583,7 @@ QPushButton:hover {
                 <item>
                  <widget class="QStackedWidget" name="stackedWidget">
                   <property name="currentIndex">
-                   <number>1</number>
+                   <number>2</number>
                   </property>
                   <widget class="QWidget" name="page_acerca_de">
                    <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -629,7 +629,12 @@ p, li { white-space: pre-wrap; }
                          </property>
                          <property name="font">
                           <font>
+                           <family>Yu Gothic UI Semibold</family>
                            <pointsize>16</pointsize>
+                           <weight>50</weight>
+                           <bold>false</bold>
+                           <underline>false</underline>
+                           <strikeout>false</strikeout>
                           </font>
                          </property>
                          <property name="text">
@@ -641,7 +646,10 @@ p, li { white-space: pre-wrap; }
                         <widget class="QLabel" name="lb_nombre_tb">
                          <property name="font">
                           <font>
+                           <family>Yu Gothic UI Light</family>
                            <pointsize>16</pointsize>
+                           <strikeout>false</strikeout>
+                           <kerning>true</kerning>
                           </font>
                          </property>
                          <property name="text">
@@ -688,6 +696,7 @@ p, li { white-space: pre-wrap; }
                     </item>
                    </layout>
                   </widget>
+                  <widget class="QWidget" name="page"/>
                  </widget>
                 </item>
                 <item>
