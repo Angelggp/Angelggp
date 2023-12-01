@@ -208,6 +208,9 @@
               <height>40</height>
              </size>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -231,6 +234,9 @@
               <height>40</height>
              </size>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -253,6 +259,9 @@
               <width>16777215</width>
               <height>40</height>
              </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
              <string notr="true">bt_cerrar {
@@ -337,6 +346,9 @@
                  <height>40</height>
                 </size>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="text">
                 <string/>
                </property>
@@ -369,7 +381,8 @@
               <widget class="QLabel" name="label_2">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>Mongolian Baiti</family>
+                 <pointsize>25</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -440,7 +453,10 @@
 	border: 2px solid #3498db;
 	border-radius: 10px;
 	margin-bottom: 10px;
+	font-size: 18px;
+
 }
+
 QPushButton:hover {
     background-color: white; /* Fondo gris claro cuando el mouse está sobre el botón */
     color: black; /* Texto en color negro cuando el mouse está sobre el botón */
@@ -462,11 +478,14 @@ QPushButton:hover {
                <layout class="QVBoxLayout" name="verticalLayout_3">
                 <item>
                  <widget class="QPushButton" name="bt_exposicion">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="layoutDirection">
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="text">
-                   <string>Exposicion</string>
+                   <string>Exposición</string>
                   </property>
                   <property name="checkable">
                    <bool>false</bool>
@@ -478,6 +497,9 @@ QPushButton:hover {
                 </item>
                 <item>
                  <widget class="QPushButton" name="bt_obra">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="layoutDirection">
                    <enum>Qt::LeftToRight</enum>
                   </property>
@@ -494,6 +516,9 @@ QPushButton:hover {
                 </item>
                 <item>
                  <widget class="QPushButton" name="bt_artista">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="layoutDirection">
                    <enum>Qt::LeftToRight</enum>
                   </property>
@@ -510,11 +535,14 @@ QPushButton:hover {
                 </item>
                 <item>
                  <widget class="QPushButton" name="bt_telefono">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="layoutDirection">
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="text">
-                   <string>Telefono</string>
+                   <string>Teléfono</string>
                   </property>
                   <property name="checkable">
                    <bool>false</bool>
@@ -539,6 +567,9 @@ QPushButton:hover {
                 </item>
                 <item>
                  <widget class="QPushButton" name="bt_tablas">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="text">
                    <string>Base de Datos</string>
                   </property>
@@ -546,6 +577,9 @@ QPushButton:hover {
                 </item>
                 <item>
                  <widget class="QPushButton" name="bt_acerca_de">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="layoutDirection">
                    <enum>Qt::LeftToRight</enum>
                   </property>
@@ -582,8 +616,17 @@ QPushButton:hover {
                <layout class="QVBoxLayout" name="verticalLayout_4">
                 <item>
                  <widget class="QStackedWidget" name="stackedWidget">
+                  <property name="styleSheet">
+                   <string notr="true">QHeaderView::section {
+    background-color: #DEC085 ;
+}
+{
+background-color: ;
+border: 1px solid #3498db;
+}</string>
+                  </property>
                   <property name="currentIndex">
-                   <number>2</number>
+                   <number>1</number>
                   </property>
                   <widget class="QWidget" name="page_acerca_de">
                    <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -662,16 +705,9 @@ p, li { white-space: pre-wrap; }
                     </item>
                     <item>
                      <widget class="QTableWidget" name="tb_main">
-                      <column>
-                       <property name="text">
-                        <string>New Column</string>
-                       </property>
-                      </column>
-                      <column>
-                       <property name="text">
-                        <string>New Column</string>
-                       </property>
-                      </column>
+                      <property name="cursor" stdset="0">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
                       <column>
                        <property name="text">
                         <string>New Column</string>
@@ -808,7 +844,10 @@ p, li { white-space: pre-wrap; }
     background-color:#27ae60; /* Cambio de color de fondo al pasar el mouse */
     transform: scale(1.1); /* Escala del botón al pasar el mouse */
 }
-</string>
+
+QPushButton {
+	font-size:18px ;
+}</string>
                   </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
@@ -834,6 +873,9 @@ p, li { white-space: pre-wrap; }
                    </property>
                    <item>
                     <widget class="QPushButton" name="bt_agregar">
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
                      <property name="text">
                       <string>Agregar</string>
                      </property>
@@ -841,6 +883,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item>
                     <widget class="QPushButton" name="bt_editar">
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
                      <property name="text">
                       <string>Editar</string>
                      </property>
@@ -848,6 +893,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item>
                     <widget class="QPushButton" name="bt_eliminar">
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
                      <property name="text">
                       <string>Eliminar</string>
                      </property>
@@ -868,6 +916,9 @@ p, li { white-space: pre-wrap; }
                    </item>
                    <item>
                     <widget class="QPushButton" name="bt_actualizar">
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
                      <property name="text">
                       <string>Actualizar</string>
                      </property>

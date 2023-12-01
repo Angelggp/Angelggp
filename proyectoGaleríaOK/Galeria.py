@@ -40,6 +40,6 @@ print(galeria.insertar_artista(66, "C6", "1F", "P1", "N2"))
 
 # print(galeria.borrar_ocurrencia(44))
 
-print(galeria.mostrar_tabla("Artista"))
+print(galeria.mostrar_tabla("Exposición"))
 print()
 #print(galeria.mostrar_tabla("Obra"))

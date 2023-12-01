@@ -117,6 +117,7 @@ class Ui_MainWindow(object):
         self.bt_minimizar = QtWidgets.QPushButton(self.fr_superior)
         self.bt_minimizar.setMinimumSize(QtCore.QSize(40, 0))
         self.bt_minimizar.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.bt_minimizar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_minimizar.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/icons/minus.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -126,6 +127,7 @@ class Ui_MainWindow(object):
         self.bt_maximizar = QtWidgets.QPushButton(self.fr_superior)
         self.bt_maximizar.setMinimumSize(QtCore.QSize(40, 0))
         self.bt_maximizar.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.bt_maximizar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_maximizar.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/icons/icons/maximize.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -135,6 +137,7 @@ class Ui_MainWindow(object):
         self.bt_cerrar = QtWidgets.QPushButton(self.fr_superior)
         self.bt_cerrar.setMinimumSize(QtCore.QSize(40, 0))
         self.bt_cerrar.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.bt_cerrar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_cerrar.setStyleSheet("bt_cerrar {\n"
 "    padding: 10px;\n"
 "    background-color: #e74c3c; /* Color rojo */\n"
@@ -175,6 +178,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.bt_menu = QtWidgets.QPushButton(self.fr_menu_titulo)
         self.bt_menu.setMinimumSize(QtCore.QSize(275, 40))
+        self.bt_menu.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_menu.setText("")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(":/icons/icons/menu.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -186,7 +190,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.addItem(spacerItem1)
         self.label_2 = QtWidgets.QLabel(self.fr_menu_titulo)
         font = QtGui.QFont()
-        font.setPointSize(18)
+        font.setFamily("Mongolian Baiti")
+        font.setPointSize(25)
         font.setBold(True)
         font.setWeight(75)
         self.label_2.setFont(font)
@@ -212,7 +217,10 @@ class Ui_MainWindow(object):
 "    border: 2px solid #3498db;\n"
 "    border-radius: 10px;\n"
 "    margin-bottom: 10px;\n"
+"    font-size: 18px;\n"
+"\n"
 "}\n"
+"\n"
 "QPushButton:hover {\n"
 "    background-color: white; /* Fondo gris claro cuando el mouse está sobre el botón */\n"
 "    color: black; /* Texto en color negro cuando el mouse está sobre el botón */\n"
@@ -230,24 +238,28 @@ class Ui_MainWindow(object):
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.fr_menu)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.bt_exposicion = QtWidgets.QPushButton(self.fr_menu)
+        self.bt_exposicion.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_exposicion.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.bt_exposicion.setCheckable(False)
         self.bt_exposicion.setAutoRepeat(False)
         self.bt_exposicion.setObjectName("bt_exposicion")
         self.verticalLayout_3.addWidget(self.bt_exposicion)
         self.bt_obra = QtWidgets.QPushButton(self.fr_menu)
+        self.bt_obra.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_obra.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.bt_obra.setCheckable(False)
         self.bt_obra.setAutoRepeat(False)
         self.bt_obra.setObjectName("bt_obra")
         self.verticalLayout_3.addWidget(self.bt_obra)
         self.bt_artista = QtWidgets.QPushButton(self.fr_menu)
+        self.bt_artista.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_artista.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.bt_artista.setCheckable(False)
         self.bt_artista.setAutoRepeat(False)
         self.bt_artista.setObjectName("bt_artista")
         self.verticalLayout_3.addWidget(self.bt_artista)
         self.bt_telefono = QtWidgets.QPushButton(self.fr_menu)
+        self.bt_telefono.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_telefono.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.bt_telefono.setCheckable(False)
         self.bt_telefono.setAutoRepeat(False)
@@ -256,9 +268,11 @@ class Ui_MainWindow(object):
         spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_3.addItem(spacerItem3)
         self.bt_tablas = QtWidgets.QPushButton(self.fr_menu)
+        self.bt_tablas.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_tablas.setObjectName("bt_tablas")
         self.verticalLayout_3.addWidget(self.bt_tablas)
         self.bt_acerca_de = QtWidgets.QPushButton(self.fr_menu)
+        self.bt_acerca_de.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_acerca_de.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.bt_acerca_de.setCheckable(False)
         self.bt_acerca_de.setAutoRepeat(False)
@@ -278,6 +292,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.fr_tablas)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.stackedWidget = QtWidgets.QStackedWidget(self.fr_tablas)
+        self.stackedWidget.setStyleSheet("QHeaderView::section {\n"
+"    background-color: #DEC085 ;\n"
+"}\n"
+"{\n"
+"background-color: ;\n"
+"border: 1px solid #3498db;\n"
+"}")
         self.stackedWidget.setObjectName("stackedWidget")
         self.page_acerca_de = QtWidgets.QWidget()
         self.page_acerca_de.setObjectName("page_acerca_de")
@@ -321,8 +342,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.addWidget(self.lb_nombre_tb)
         self.verticalLayout_5.addWidget(self.fr_nombre_tb)
         self.tb_main = QtWidgets.QTableWidget(self.page_tb)
+        self.tb_main.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.tb_main.setObjectName("tb_main")
-        self.tb_main.setColumnCount(6)
+        self.tb_main.setColumnCount(4)
         self.tb_main.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tb_main.setHorizontalHeaderItem(0, item)
@@ -332,10 +354,6 @@ class Ui_MainWindow(object):
         self.tb_main.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tb_main.setHorizontalHeaderItem(3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tb_main.setHorizontalHeaderItem(4, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tb_main.setHorizontalHeaderItem(5, item)
         self.verticalLayout_5.addWidget(self.tb_main)
         self.stackedWidget.addWidget(self.page_tb)
         self.page = QtWidgets.QWidget()
@@ -439,7 +457,10 @@ class Ui_MainWindow(object):
 "    background-color:#27ae60; /* Cambio de color de fondo al pasar el mouse */\n"
 "    transform: scale(1.1); /* Escala del botón al pasar el mouse */\n"
 "}\n"
-"")
+"\n"
+"QPushButton {\n"
+"    font-size:18px ;\n"
+"}")
         self.fr_crud.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.fr_crud.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fr_crud.setObjectName("fr_crud")
@@ -448,17 +469,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setSpacing(0)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.bt_agregar = QtWidgets.QPushButton(self.fr_crud)
+        self.bt_agregar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_agregar.setObjectName("bt_agregar")
         self.horizontalLayout_6.addWidget(self.bt_agregar)
         self.bt_editar = QtWidgets.QPushButton(self.fr_crud)
+        self.bt_editar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_editar.setObjectName("bt_editar")
         self.horizontalLayout_6.addWidget(self.bt_editar)
         self.bt_eliminar = QtWidgets.QPushButton(self.fr_crud)
+        self.bt_eliminar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_eliminar.setObjectName("bt_eliminar")
         self.horizontalLayout_6.addWidget(self.bt_eliminar)
         spacerItem4 = QtWidgets.QSpacerItem(200, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_6.addItem(spacerItem4)
         self.bt_actualizar = QtWidgets.QPushButton(self.fr_crud)
+        self.bt_actualizar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_actualizar.setObjectName("bt_actualizar")
         self.horizontalLayout_6.addWidget(self.bt_actualizar)
         self.verticalLayout_4.addWidget(self.fr_crud)
@@ -471,7 +496,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -479,10 +504,10 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "  Galería bd"))
         self.label_2.setText(_translate("MainWindow", "Base de Datos"))
-        self.bt_exposicion.setText(_translate("MainWindow", "Exposicion"))
+        self.bt_exposicion.setText(_translate("MainWindow", "Exposición"))
         self.bt_obra.setText(_translate("MainWindow", "Obra"))
         self.bt_artista.setText(_translate("MainWindow", "Artista"))
-        self.bt_telefono.setText(_translate("MainWindow", "Telefono"))
+        self.bt_telefono.setText(_translate("MainWindow", "Teléfono"))
         self.bt_tablas.setText(_translate("MainWindow", "Base de Datos"))
         self.bt_acerca_de.setText(_translate("MainWindow", "Acerca de..."))
         self.text_acerca_de.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -506,10 +531,6 @@ class Ui_MainWindow(object):
         item = self.tb_main.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "New Column"))
         item = self.tb_main.horizontalHeaderItem(3)
-        item.setText(_translate("MainWindow", "New Column"))
-        item = self.tb_main.horizontalHeaderItem(4)
-        item.setText(_translate("MainWindow", "New Column"))
-        item = self.tb_main.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "New Column"))
         self.bt_agregar.setText(_translate("MainWindow", "Agregar"))
         self.bt_editar.setText(_translate("MainWindow", "Editar"))

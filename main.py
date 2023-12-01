@@ -1,7 +1,6 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QHeaderView
 from PyQt5.uic import loadUi
 from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtCore import QPropertyAnimation
 import icons_rc
 import sys
 from  proyectoGaleríaOK.connSql import Galeria
@@ -16,6 +15,7 @@ class Principal(QMainWindow):
         # pagina que se muestra por defecto
         self.stackedWidget.setCurrentIndex(1)
         self.bd = Galeria()
+        #self.setEnabled(True)
      
      # eliminar la barra de titulo que viene por defecto en Qt
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
@@ -30,6 +30,8 @@ class Principal(QMainWindow):
         self.bt_cerrar.clicked.connect(lambda: self.close())
         self.bt_minimizar.clicked.connect(self.minimizar)
         self.bt_maximizar.clicked.connect(self.maximizar)
+
+        #self.bt_actualizar.clicked.connect(self.actualizar_tablas)
 
         # botones del menu 
         self.bt_exposicion.clicked.connect(lambda: self.visualizar_tabla("Exposición"))
@@ -107,7 +109,16 @@ class Principal(QMainWindow):
                 self.tb_main.setItem(contador, j, QtWidgets.QTableWidgetItem(str(i[j]))) 
             contador += 1
         self.tb_main.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-        self.deshabilitar_edicion(self.tb_main)
+        #self.deshabilitar_edicion(self.tb_main)
+
+    '''
+    def actualizar_tablas(self):
+        self.visualizar_tabla("Exposición")
+        self.visualizar_tabla("Obra")
+        self.visualizar_tabla("Artista")
+        self.visualizar_tabla("Teléfono")
+
+    '''
 
 
 
