@@ -2,9 +2,6 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QComboBox,  QMessageBox
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.uic import loadUi
 from  proyectoGaleríaOK.connSql import Galeria
-
-
-
 import sys
 
 
@@ -18,6 +15,7 @@ class Secundaria(QMainWindow):
         # pagina que se muestra por defecto
         self.stacked_widget.setCurrentIndex(0)
         self.bd = Galeria()
+        self.cargar_combobox()
 
         self.actionExposicion.triggered.connect(lambda: self.stacked_widget.setCurrentIndex(0))
         self.actionArtista.triggered.connect(lambda: self.stacked_widget.setCurrentIndex(1))
@@ -42,7 +40,7 @@ class Secundaria(QMainWindow):
     def agregar_telefono(self):
         ci = self.lineEdit_ci_artista.text()
         telefono = self.lineEdit_no_telefono.text()
-        if not ci.isdigit() or not telefono.isdigit():
+        if not ci.isdigit() and not telefono.isdigit():
             r = "ci y teléfono deben ser números enteros"
             QMessageBox.critical(None, "Error", r)
         elif self.bd.existeArtista(ci) and self.bd.existetelefono(telefono):
@@ -54,7 +52,7 @@ class Secundaria(QMainWindow):
         elif self.bd.existetelefono(telefono):
             r = "teléfono ya existe"
             QMessageBox.critical(None, "Error", r)
-        elif ci != "" and telefono != "":
+        
             self.bd.insertar_telefono(ci, telefono)
             self.mensaje = QMessageBox.information(None, "Éxito", "El número de teléfono del artista {} se agregó con éxito.".format(ci))
             self.lineEdit_ci_artista.clear()
@@ -115,21 +113,14 @@ class Secundaria(QMainWindow):
         exposicion = self.comboBox_titulo_exposicion.currentText()
         precio = self.lineEdit_presio_salida.text()
         ci_artista = self.lineEdit_ci_artist.text()
-        
         mejor_oferta = self.lineEdit_precio_mejor.text()
 
-        # Obtener datos de la exposición si no se han obtenido previamente
-
-        datos_exposicion = self.bd.mostrar_tabla("Exposición")
-        indice_titulo_exposicion = datos_exposicion[0].index("Título_expo")
-        exposicion = [item[indice_titulo_exposicion] for item in datos_exposicion]
-        print(exposicion)
-
-            # Limpiar elementos previos en el ComboBox antes de volver a cargar
-        self.comboBox_titulo_exposicion.clear()
-
-            # Agregar datos al ComboBox
-        self.comboBox_titulo_exposicion.addItems(self.exposicion)
+        # checkbuttom 
+        vendido = self.check_si.isChecked() # devuelve true o false
+        if vendido:
+            self.valor = "si"
+        else: 
+           self.valor = "no"
 
         if not id.isdigit() or not precio.isdigit() or not ci_artista.isdigit() or not mejor_oferta.isdigit():
             r = "id, precio, ci artista, mejor oferta deben ser números enteros"
@@ -144,7 +135,7 @@ class Secundaria(QMainWindow):
             r = "El precio de venta y el precio de la mejor oferta deben ser mayores que cero"
             QMessageBox.critical(None, "Error", r)
         else:
-            self.bd.insertar_obra(id, titulo, estilo, exposicion, ci_artista, vendido, mejor_oferta)
+            self.bd.insertar_obra(id, titulo, estilo,precio , exposicion, ci_artista, self.valor, mejor_oferta)
             self.mensaje = QMessageBox.information(None, "Éxito", "La obra {} se agregó con éxito.".format(id))
 
             # Limpiar campos después de agregar la obra
@@ -153,15 +144,30 @@ class Secundaria(QMainWindow):
             self.lineEdit_Estilo.clear()
             self.lineEdit_presio_salida.clear()
             self.lineEdit_ci_artist.clear()
-            self.lineEdit_vendido.clear()
+            self.comboBox_titulo_exposicion.setCurrentIndex(-1)
+            self.check_si.setChecked(False)
             self.lineEdit_precio_mejor.clear()
+
+    def cargar_combobox(self):
+        datos_exposicion = self.bd.mostrar_tabla("Exposición")
+        indice_titulo_exposicion = datos_exposicion[0].index("Título_expo")
+        exposicion = [item[indice_titulo_exposicion] for item in datos_exposicion[1]]
+        print(indice_titulo_exposicion)
+
+        # Limpiar elementos previos en el ComboBox antes de volver a cargar
+        self.comboBox_titulo_exposicion.clear()
+
+        # Agregar datos al ComboBox
+        self.comboBox_titulo_exposicion.addItem('')
+        self.comboBox_titulo_exposicion.addItems(exposicion)
+    
 
     
 
 
-if __name__ == '__main__':
+'''if __name__ == '__main__':
     app = QApplication([])
     ventana = Secundaria()
     ventana.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec_())'''
 

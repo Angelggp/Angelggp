@@ -93,7 +93,7 @@
 </string>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="page_exposicion">
           <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -507,7 +507,18 @@
                 </widget>
                </item>
                <item>
-                <widget class="QComboBox" name="comboBox_titulo_exposicion"/>
+                <widget class="QComboBox" name="comboBox_titulo_exposicion">
+                 <item>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item>
                 <widget class="QLabel" name="label_19">
@@ -539,7 +550,7 @@
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_6">
                  <item>
-                  <widget class="QRadioButton" name="radioButton_2">
+                  <widget class="QCheckBox" name="check_si">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -547,18 +558,6 @@
                    </property>
                    <property name="text">
                     <string>Si</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QRadioButton" name="radioButton">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>No</string>
                    </property>
                   </widget>
                  </item>
@@ -599,22 +598,22 @@
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="bt_aceptar_obra">
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="text">
-                <string>Aceptar</string>
-               </property>
-              </widget>
-             </item>
-             <item>
               <widget class="QPushButton" name="bt_cancelar_obra">
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="text">
                 <string>Cancelar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="bt_aceptar_obra">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="text">
+                <string>Aceptar</string>
                </property>
               </widget>
              </item>
