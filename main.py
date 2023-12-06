@@ -33,7 +33,7 @@ class Principal(QMainWindow):
         self.bt_minimizar.clicked.connect(self.minimizar)
         self.bt_maximizar.clicked.connect(self.maximizar)
 
-        #self.bt_actualizar.clicked.connect(self.actualizar_tablas)
+        self.bt_actualizar.clicked.connect(self.actualizar_tabla)
 
         # botones del menu 
         self.bt_exposicion.clicked.connect(lambda: self.visualizar_tabla("Exposición"))
@@ -50,6 +50,8 @@ class Principal(QMainWindow):
 
         # mover ventana
         self.fr_superior.mouseMoveEvent=self.mover_ventana
+
+        self.lb_nombre_tb.text()
 
         
 
@@ -122,15 +124,9 @@ class Principal(QMainWindow):
         self.tb_main.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.deshabilitar_edicion(self.tb_main)
 
-    '''
-    def actualizar_tablas(self):
-        self.visualizar_tabla("Exposición")
-        self.visualizar_tabla("Obra")
-        self.visualizar_tabla("Artista")
-        self.visualizar_tabla("Teléfono")
-
-    '''
-
+    def actualizar_tabla(self):
+        nombre_tb_actual = self.lb_nombre_tb.text()
+        self.visualizar_tabla(nombre_tb_actual)
 
 
     def deshabilitar_edicion(self, tabla):

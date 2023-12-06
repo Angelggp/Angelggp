@@ -577,6 +577,9 @@ QPushButton:hover {
                 </item>
                 <item>
                  <widget class="QPushButton" name="bt_obra_vendida">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="text">
                    <string>Obras Vendidas</string>
                   </property>

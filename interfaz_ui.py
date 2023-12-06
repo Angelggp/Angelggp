@@ -272,6 +272,7 @@ class Ui_MainWindow(object):
         self.bt_tablas.setObjectName("bt_tablas")
         self.verticalLayout_3.addWidget(self.bt_tablas)
         self.bt_obra_vendida = QtWidgets.QPushButton(self.fr_menu)
+        self.bt_obra_vendida.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_obra_vendida.setObjectName("bt_obra_vendida")
         self.verticalLayout_3.addWidget(self.bt_obra_vendida)
         self.bt_acerca_de = QtWidgets.QPushButton(self.fr_menu)
