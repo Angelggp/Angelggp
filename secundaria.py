@@ -5,12 +5,12 @@ from  proyectoGaleríaOK.connSql import Galeria
 import sys
 
 
-class Secundaria(QMainWindow):
+class VentanaAgregar(QMainWindow):
     def __init__(self):
-        super(Secundaria, self).__init__()
+        super(VentanaAgregar, self).__init__()
 
         # Cargar el archivo .ui
-        loadUi('interfaz_secundaria.ui', self)
+        loadUi('interfaz_agregar.ui', self)
         self.setWindowTitle('Agregar')
         # pagina que se muestra por defecto
         self.stacked_widget.setCurrentIndex(0)
@@ -40,19 +40,16 @@ class Secundaria(QMainWindow):
     def agregar_telefono(self):
         ci = self.lineEdit_ci_artista.text()
         telefono = self.lineEdit_no_telefono.text()
-        if not ci.isdigit() and not telefono.isdigit():
+        if ci == "" or telefono == "":
+            r = "Rellene los campos vacíos"
+            QMessageBox.critical(None, "Error", r)
+        elif not ci.isdigit() or not telefono.isdigit():
             r = "ci y teléfono deben ser números enteros"
             QMessageBox.critical(None, "Error", r)
-        elif self.bd.existeArtista(ci) and self.bd.existetelefono(telefono):
-            r = "ci y teléfono ya existen"
+        elif self.bd.existetelefono(telefono):
+            r = "Teléfono de {} ya existen".format(telefono)
             QMessageBox.critical(None, "Error", r)
         elif self.bd.existeArtista(ci):
-            r = "ci existe"
-            QMessageBox.critical(None, "Error", r)
-        elif self.bd.existetelefono(telefono):
-            r = "teléfono ya existe"
-            QMessageBox.critical(None, "Error", r)
-        
             self.bd.insertar_telefono(ci, telefono)
             self.mensaje = QMessageBox.information(None, "Éxito", "El número de teléfono del artista {} se agregó con éxito.".format(ci))
             self.lineEdit_ci_artista.clear()

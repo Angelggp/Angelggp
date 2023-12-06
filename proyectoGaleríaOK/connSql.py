@@ -313,7 +313,7 @@ class Galeria:
             if count != 0:
                 return lista_vendido
             else:
-                return f"De la exposición {nombre_expo} no se han vendido obras."
+                f"De la exposición {nombre_expo} no se han vendido obras."
             
         except sqlite3.Error as e:
             return f"Ha ocurrido un error ", e
@@ -619,12 +619,13 @@ class Galeria:
                 cursor.execute("DELETE FROM Artista WHERE Ci = ?", (ci,))
                 self.borrar_telefono(ci)
                 conexBase.commit()
+                return True
             else:
-                return f"El artista {ci} tiene {obras_count} obras asociadas. No se puede eliminar de la tabla."
+                return False# f"El artista {ci} tiene {obras_count} obras asociadas. No se puede eliminar de la tabla."
         
             conexBase.close()
         else:
-            return f"No existen registros para {ci}"
+             f"No existen registros para {ci}"
 
  # Tabla Teléfono
     def crear_tabla_teléfono(self):

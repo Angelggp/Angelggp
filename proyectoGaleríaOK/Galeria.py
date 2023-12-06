@@ -1,10 +1,10 @@
 from  connSql import Galeria
 
-galeria = Galeria()
+bd = Galeria()
 
 # print(galeria.insertar_exposicion("Exposicion6", "08/02/2023", "12/01/2023", "Exposicion de literatura contemporanea"))
 # print(galeria.insertar_obra(6, "Obra5", "barroco", 22.36, "Exposicion1", 22, "si", 55.24))
-print(galeria.insertar_artista(66, "C6", "1F", "P1", "N2"))
+#print(galeria.insertar_artista(66, "C6", "1F", "P1", "N2"))
 # print(galeria.insertar_telefono(22, 22222221))
 
 # print(galeria.tienetelefono(11))
@@ -40,6 +40,19 @@ print(galeria.insertar_artista(66, "C6", "1F", "P1", "N2"))
 
 # print(galeria.borrar_ocurrencia(44))
 
-print(galeria.mostrar_tabla("Exposición"))
-print()
+#print(bd.mostrar_tabla("Exposición"))
+def visusalizar_obra_vendida():
+    """
+    Primero debo pasarle al combobox un listado de las exposiciones que tienen obras vendidas
+    y al seleccionar una exposicion me muestre en la tabla las obras vendidas de dicha exposicion
+    """
+    encabezaado, datos = bd.mostrar_tabla("Exposición")
+    lista_obras_vendidas = []
+    for i in datos:
+        r = bd.listarObra_vendida(str(i[0]))
+        lista_obras_vendidas.append(r)
+    return lista_obras_vendidas
+
+#print(visusalizar_obra_vendida())
+print(bd.listarObra_vendida("rrrrr"))
 #print(galeria.mostrar_tabla("Obra"))
