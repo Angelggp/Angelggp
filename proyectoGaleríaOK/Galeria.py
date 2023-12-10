@@ -54,5 +54,8 @@ def visusalizar_obra_vendida():
     return lista_obras_vendidas
 
 #print(visusalizar_obra_vendida())
-print(bd.listarObra_vendida("rrrrr"))
+#print(bd.listarObra_vendida("rrrrr"))
 #print(galeria.mostrar_tabla("Obra"))
+
+l = bd.seleccionar_artista("13")
+print(l[4])

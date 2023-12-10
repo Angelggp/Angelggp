@@ -6,6 +6,7 @@ import sys
 from  proyectoGaleríaOK.connSql import Galeria
 from secundaria import VentanaAgregar
 from secundaria_2 import VentanaEliminar
+from secundaria_3 import VentanaEditar
 
 class Principal(QMainWindow):
     def __init__(self):
@@ -47,10 +48,10 @@ class Principal(QMainWindow):
         # botones crud
         self.bt_agregar.clicked.connect(lambda: VentanaAgregar().show())
         self.bt_eliminar.clicked.connect(lambda: VentanaEliminar().exec_())
+        self.bt_editar.clicked.connect(lambda: VentanaEditar().exec_())
 
         # mover ventana
         self.fr_superior.mouseMoveEvent=self.mover_ventana
-
         self.lb_nombre_tb.text()
 
         

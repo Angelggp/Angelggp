@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1184, 887)
+        MainWindow.resize(1228, 887)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("/*background-color: rgb(255, 255, 255);*/\n"
 "\n"
@@ -371,8 +371,8 @@ class Ui_MainWindow(object):
         self.lb_obras_vendidas.setObjectName("lb_obras_vendidas")
         self.horizontalLayout.addWidget(self.lb_obras_vendidas)
         self.cb_exposicion = QtWidgets.QComboBox(self.frame)
-        self.cb_exposicion.setMinimumSize(QtCore.QSize(200, 0))
-        self.cb_exposicion.setMaximumSize(QtCore.QSize(350, 35))
+        self.cb_exposicion.setMinimumSize(QtCore.QSize(300, 0))
+        self.cb_exposicion.setMaximumSize(QtCore.QSize(300, 35))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Light")
         font.setPointSize(15)
@@ -382,6 +382,8 @@ class Ui_MainWindow(object):
         self.cb_exposicion.addItem("")
         self.cb_exposicion.addItem("")
         self.horizontalLayout.addWidget(self.cb_exposicion)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem4)
         self.verticalLayout_8.addWidget(self.frame)
         self.tb_vendido = QtWidgets.QTableWidget(self.page)
         self.tb_vendido.setObjectName("tb_vendido")
@@ -514,8 +516,8 @@ class Ui_MainWindow(object):
         self.bt_eliminar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_eliminar.setObjectName("bt_eliminar")
         self.horizontalLayout_6.addWidget(self.bt_eliminar)
-        spacerItem4 = QtWidgets.QSpacerItem(200, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_6.addItem(spacerItem4)
+        spacerItem5 = QtWidgets.QSpacerItem(200, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_6.addItem(spacerItem5)
         self.bt_actualizar = QtWidgets.QPushButton(self.fr_crud)
         self.bt_actualizar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_actualizar.setObjectName("bt_actualizar")
