@@ -440,7 +440,7 @@ p, li { white-space: pre-wrap; }
                 </font>
                </property>
                <property name="text">
-                <string>Agregar Obra</string>
+                <string>Editar Obra</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -724,7 +724,7 @@ p, li { white-space: pre-wrap; }
                 </font>
                </property>
                <property name="text">
-                <string>Agregar Artista</string>
+                <string>Editar Artista</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -933,7 +933,7 @@ p, li { white-space: pre-wrap; }
                    </font>
                   </property>
                   <property name="text">
-                   <string>Agregar Teléfono</string>
+                   <string>Editar Teléfono</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>

@@ -55,7 +55,7 @@ class VentanaAgregar(QMainWindow):
             self.lineEdit_ci_artista.clear()
             self.lineEdit_no_telefono.clear()
         else:
-            QMessageBox.critical(None, "Error", "Rellene los campos vacíos")
+            QMessageBox.critical(None, "Error", "El artista no existe en la base de datos.")
 
             
     def agregar_exposicion(self):

@@ -454,6 +454,8 @@
 	border-radius: 10px;
 	margin-bottom: 10px;
 	font-size: 18px;
+	text-align: left; 
+	padding-left: 60px;
 
 }
 
@@ -487,6 +489,10 @@ QPushButton:hover {
                   <property name="text">
                    <string>Exposición</string>
                   </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/icons/table.svg</normaloff>:/icons/icons/table.svg</iconset>
+                  </property>
                   <property name="checkable">
                    <bool>false</bool>
                   </property>
@@ -505,6 +511,10 @@ QPushButton:hover {
                   </property>
                   <property name="text">
                    <string>Obra</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/icons/table.svg</normaloff>:/icons/icons/table.svg</iconset>
                   </property>
                   <property name="checkable">
                    <bool>false</bool>
@@ -525,6 +535,10 @@ QPushButton:hover {
                   <property name="text">
                    <string>Artista</string>
                   </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/icons/table.svg</normaloff>:/icons/icons/table.svg</iconset>
+                  </property>
                   <property name="checkable">
                    <bool>false</bool>
                   </property>
@@ -543,6 +557,10 @@ QPushButton:hover {
                   </property>
                   <property name="text">
                    <string>Teléfono</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/icons/table.svg</normaloff>:/icons/icons/table.svg</iconset>
                   </property>
                   <property name="checkable">
                    <bool>false</bool>
@@ -573,6 +591,10 @@ QPushButton:hover {
                   <property name="text">
                    <string>Base de Datos</string>
                   </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/icons/database.svg</normaloff>:/icons/icons/database.svg</iconset>
+                  </property>
                  </widget>
                 </item>
                 <item>
@@ -582,6 +604,13 @@ QPushButton:hover {
                   </property>
                   <property name="text">
                    <string>Obras Vendidas</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/icons/shopping-cart.svg</normaloff>:/icons/icons/shopping-cart.svg</iconset>
+                  </property>
+                  <property name="checkable">
+                   <bool>false</bool>
                   </property>
                  </widget>
                 </item>
@@ -595,6 +624,10 @@ QPushButton:hover {
                   </property>
                   <property name="text">
                    <string>Acerca de...</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/icons/info.svg</normaloff>:/icons/icons/info.svg</iconset>
                   </property>
                   <property name="checkable">
                    <bool>false</bool>
@@ -629,15 +662,16 @@ QPushButton:hover {
                   <property name="styleSheet">
                    <string notr="true">QHeaderView::section {
     background-color: #DEC085;
+	font-size: 20px;
 }
 {
 background-color: ;
 border: 1px solid #3498db;
-font-size: 15;
+font-size: 30px;
 }</string>
                   </property>
                   <property name="currentIndex">
-                   <number>2</number>
+                   <number>1</number>
                   </property>
                   <widget class="QWidget" name="page_tb">
                    <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -709,15 +743,18 @@ font-size: 15;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline;&quot;&gt;Acerca de la aplicación:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Acerca de la aplicación:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Desarrolladores: Angel Gabriel Garcia Plutin&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;	            Javier Alexey Molina Cardoso&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Descripción:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Sistema de información para galería de arte que proporciona acceso actualizado a exposiciones, incluyendo detalles como título, descripción, fechas de inauguración y clausura. La aplicación muestra obras de arte con información detallada como título, artista, estilo y precio de salida. Permite a los usuarios realizar ofertas por obras, y al finalizar la exposición, el propietario puede vender la obra al mejor postor. Desarrollado en Python con sqlite3 para gestionar la base de datos. Utiliza Visual Studio Code 1.81.0 como entorno de desarrollo y DB Browser SQLite 3.12.2 para explorar y administrar eficientemente la base de datos. Se basa en un Modelo Entidad Relación (MER) y un modelo relacional para implementar el sistema de información de la galería de arte.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Versión: 1.0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;Desarrolladores:&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; Angel Gabriel Garcia Plutin&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;                          Javier Alexey Molina Cardoso&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;Descripción:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Sistema de información para galería de arte que proporciona acceso actualizado a exposiciones, incluyendo detalles como título, descripción, fechas de inauguración y clausura. La aplicación muestra obras de arte con información detallada como título, artista, estilo y precio de salida. Permite a los usuarios realizar ofertas por obras, y al finalizar la exposición, el propietario puede vender la obra al mejor postor. Desarrollado en Python, la aplicación utiliza la biblioteca PyQt5 para construir la interfaz gráfica de usuario. Para diseñar visualmente la interfaz, se empleó Qt Designer, una herramienta que facilita la creación de interfaces gráficas mediante la disposición de widgets de manera intuitiva. La gestión de la base de datos se lleva a cabo con sqlite3, garantizando la eficiente manipulación de la información. Visual Studio Code 1.81.0 fue el entorno de desarrollo utilizado para escribir y organizar el código, mientras que DB Browser SQLite 3.12.2 permitió explorar y administrar eficientemente la base de datos. La aplicación se basa en un Modelo Entidad Relación (MER) y un modelo relacional para implementar el sistema de información de la galería de arte.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Versión&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;: 1.0&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; vertical-align:super;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                      </widget>
                     </item>
@@ -833,6 +870,9 @@ p, li { white-space: pre-wrap; }
                   </property>
                   <property name="styleSheet">
                    <string notr="true">/* Estilo para el botón Agregar */
+
+QPushButton {width: 100px; height: 25px;}
+
 #bt_agregar {
     padding: 15px 30px;
     background-color: #2ecc71; /* Color verde */
@@ -961,6 +1001,10 @@ QPushButton {
                      <property name="text">
                       <string>Agregar</string>
                      </property>
+                     <property name="icon">
+                      <iconset resource="icons.qrc">
+                       <normaloff>:/icons/icons/file-plus.svg</normaloff>:/icons/icons/file-plus.svg</iconset>
+                     </property>
                     </widget>
                    </item>
                    <item>
@@ -971,6 +1015,10 @@ QPushButton {
                      <property name="text">
                       <string>Editar</string>
                      </property>
+                     <property name="icon">
+                      <iconset resource="icons.qrc">
+                       <normaloff>:/icons/icons/edit.svg</normaloff>:/icons/icons/edit.svg</iconset>
+                     </property>
                     </widget>
                    </item>
                    <item>
@@ -980,6 +1028,10 @@ QPushButton {
                      </property>
                      <property name="text">
                       <string>Eliminar</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="icons.qrc">
+                       <normaloff>:/icons/icons/trash-2.svg</normaloff>:/icons/icons/trash-2.svg</iconset>
                      </property>
                     </widget>
                    </item>
@@ -1003,6 +1055,10 @@ QPushButton {
                      </property>
                      <property name="text">
                       <string>Actualizar</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="icons.qrc">
+                       <normaloff>:/icons/icons/check-square.svg</normaloff>:/icons/icons/check-square.svg</iconset>
                      </property>
                     </widget>
                    </item>

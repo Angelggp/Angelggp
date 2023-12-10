@@ -218,6 +218,8 @@ class Ui_MainWindow(object):
 "    border-radius: 10px;\n"
 "    margin-bottom: 10px;\n"
 "    font-size: 18px;\n"
+"    text-align: left; \n"
+"    padding-left: 60px;\n"
 "\n"
 "}\n"
 "\n"
@@ -240,6 +242,9 @@ class Ui_MainWindow(object):
         self.bt_exposicion = QtWidgets.QPushButton(self.fr_menu)
         self.bt_exposicion.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_exposicion.setLayoutDirection(QtCore.Qt.LeftToRight)
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(":/icons/icons/table.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.bt_exposicion.setIcon(icon4)
         self.bt_exposicion.setCheckable(False)
         self.bt_exposicion.setAutoRepeat(False)
         self.bt_exposicion.setObjectName("bt_exposicion")
@@ -247,6 +252,7 @@ class Ui_MainWindow(object):
         self.bt_obra = QtWidgets.QPushButton(self.fr_menu)
         self.bt_obra.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_obra.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.bt_obra.setIcon(icon4)
         self.bt_obra.setCheckable(False)
         self.bt_obra.setAutoRepeat(False)
         self.bt_obra.setObjectName("bt_obra")
@@ -254,6 +260,7 @@ class Ui_MainWindow(object):
         self.bt_artista = QtWidgets.QPushButton(self.fr_menu)
         self.bt_artista.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_artista.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.bt_artista.setIcon(icon4)
         self.bt_artista.setCheckable(False)
         self.bt_artista.setAutoRepeat(False)
         self.bt_artista.setObjectName("bt_artista")
@@ -261,6 +268,7 @@ class Ui_MainWindow(object):
         self.bt_telefono = QtWidgets.QPushButton(self.fr_menu)
         self.bt_telefono.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_telefono.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.bt_telefono.setIcon(icon4)
         self.bt_telefono.setCheckable(False)
         self.bt_telefono.setAutoRepeat(False)
         self.bt_telefono.setObjectName("bt_telefono")
@@ -269,15 +277,25 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addItem(spacerItem3)
         self.bt_tablas = QtWidgets.QPushButton(self.fr_menu)
         self.bt_tablas.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(":/icons/icons/database.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.bt_tablas.setIcon(icon5)
         self.bt_tablas.setObjectName("bt_tablas")
         self.verticalLayout_3.addWidget(self.bt_tablas)
         self.bt_obra_vendida = QtWidgets.QPushButton(self.fr_menu)
         self.bt_obra_vendida.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(":/icons/icons/shopping-cart.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.bt_obra_vendida.setIcon(icon6)
+        self.bt_obra_vendida.setCheckable(False)
         self.bt_obra_vendida.setObjectName("bt_obra_vendida")
         self.verticalLayout_3.addWidget(self.bt_obra_vendida)
         self.bt_acerca_de = QtWidgets.QPushButton(self.fr_menu)
         self.bt_acerca_de.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_acerca_de.setLayoutDirection(QtCore.Qt.LeftToRight)
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap(":/icons/icons/info.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.bt_acerca_de.setIcon(icon7)
         self.bt_acerca_de.setCheckable(False)
         self.bt_acerca_de.setAutoRepeat(False)
         self.bt_acerca_de.setObjectName("bt_acerca_de")
@@ -298,11 +316,12 @@ class Ui_MainWindow(object):
         self.stackedWidget = QtWidgets.QStackedWidget(self.fr_tablas)
         self.stackedWidget.setStyleSheet("QHeaderView::section {\n"
 "    background-color: #DEC085;\n"
+"    font-size: 20px;\n"
 "}\n"
 "{\n"
 "background-color: ;\n"
 "border: 1px solid #3498db;\n"
-"font-size: 15;\n"
+"font-size: 30px;\n"
 "}")
         self.stackedWidget.setObjectName("stackedWidget")
         self.page_tb = QtWidgets.QWidget()
@@ -400,6 +419,9 @@ class Ui_MainWindow(object):
         self.fr_crud.setMinimumSize(QtCore.QSize(0, 100))
         self.fr_crud.setMaximumSize(QtCore.QSize(16777215, 100))
         self.fr_crud.setStyleSheet("/* Estilo para el botón Agregar */\n"
+"\n"
+"QPushButton {width: 100px; height: 25px;}\n"
+"\n"
 "#bt_agregar {\n"
 "    padding: 15px 30px;\n"
 "    background-color: #2ecc71; /* Color verde */\n"
@@ -506,20 +528,32 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.bt_agregar = QtWidgets.QPushButton(self.fr_crud)
         self.bt_agregar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap(":/icons/icons/file-plus.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.bt_agregar.setIcon(icon8)
         self.bt_agregar.setObjectName("bt_agregar")
         self.horizontalLayout_6.addWidget(self.bt_agregar)
         self.bt_editar = QtWidgets.QPushButton(self.fr_crud)
         self.bt_editar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon9 = QtGui.QIcon()
+        icon9.addPixmap(QtGui.QPixmap(":/icons/icons/edit.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.bt_editar.setIcon(icon9)
         self.bt_editar.setObjectName("bt_editar")
         self.horizontalLayout_6.addWidget(self.bt_editar)
         self.bt_eliminar = QtWidgets.QPushButton(self.fr_crud)
         self.bt_eliminar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon10 = QtGui.QIcon()
+        icon10.addPixmap(QtGui.QPixmap(":/icons/icons/trash-2.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.bt_eliminar.setIcon(icon10)
         self.bt_eliminar.setObjectName("bt_eliminar")
         self.horizontalLayout_6.addWidget(self.bt_eliminar)
         spacerItem5 = QtWidgets.QSpacerItem(200, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_6.addItem(spacerItem5)
         self.bt_actualizar = QtWidgets.QPushButton(self.fr_crud)
         self.bt_actualizar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon11 = QtGui.QIcon()
+        icon11.addPixmap(QtGui.QPixmap(":/icons/icons/check-square.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.bt_actualizar.setIcon(icon11)
         self.bt_actualizar.setObjectName("bt_actualizar")
         self.horizontalLayout_6.addWidget(self.bt_actualizar)
         self.verticalLayout_4.addWidget(self.fr_crud)
@@ -532,7 +566,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -552,15 +586,18 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; text-decoration: underline;\">Acerca de la aplicación:</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Acerca de la aplicación:</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Desarrolladores: Angel Gabriel Garcia Plutin</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">                Javier Alexey Molina Cardoso</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Descripción:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Sistema de información para galería de arte que proporciona acceso actualizado a exposiciones, incluyendo detalles como título, descripción, fechas de inauguración y clausura. La aplicación muestra obras de arte con información detallada como título, artista, estilo y precio de salida. Permite a los usuarios realizar ofertas por obras, y al finalizar la exposición, el propietario puede vender la obra al mejor postor. Desarrollado en Python con sqlite3 para gestionar la base de datos. Utiliza Visual Studio Code 1.81.0 como entorno de desarrollo y DB Browser SQLite 3.12.2 para explorar y administrar eficientemente la base de datos. Se basa en un Modelo Entidad Relación (MER) y un modelo relacional para implementar el sistema de información de la galería de arte.</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Versión: 1.0</span></p></body></html>"))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; text-decoration: underline;\">Desarrolladores:</span><span style=\" font-size:10pt;\"> Angel Gabriel Garcia Plutin</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">                          Javier Alexey Molina Cardoso</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; text-decoration: underline;\">Descripción:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Sistema de información para galería de arte que proporciona acceso actualizado a exposiciones, incluyendo detalles como título, descripción, fechas de inauguración y clausura. La aplicación muestra obras de arte con información detallada como título, artista, estilo y precio de salida. Permite a los usuarios realizar ofertas por obras, y al finalizar la exposición, el propietario puede vender la obra al mejor postor. Desarrollado en Python, la aplicación utiliza la biblioteca PyQt5 para construir la interfaz gráfica de usuario. Para diseñar visualmente la interfaz, se empleó Qt Designer, una herramienta que facilita la creación de interfaces gráficas mediante la disposición de widgets de manera intuitiva. La gestión de la base de datos se lleva a cabo con sqlite3, garantizando la eficiente manipulación de la información. Visual Studio Code 1.81.0 fue el entorno de desarrollo utilizado para escribir y organizar el código, mientras que DB Browser SQLite 3.12.2 permitió explorar y administrar eficientemente la base de datos. La aplicación se basa en un Modelo Entidad Relación (MER) y un modelo relacional para implementar el sistema de información de la galería de arte.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Versión</span><span style=\" font-size:10pt; font-weight:600;\">: 1.0</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; vertical-align:super;\"><br /></span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.lb_obras_vendidas.setText(_translate("MainWindow", "Obras vendidas en la exposición:"))
         self.cb_exposicion.setItemText(0, _translate("MainWindow", "New Item"))
         self.cb_exposicion.setItemText(1, _translate("MainWindow", "New Item"))

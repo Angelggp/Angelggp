@@ -198,12 +198,6 @@ class Principal(QMainWindow):
 
 
 
-        
-    def editar_item(self):
-        pass
-    
-    
-
 
 
 if __name__ == '__main__':

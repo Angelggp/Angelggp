@@ -20,7 +20,7 @@ class VentanaEditar(QDialog):
         # Deshabilitar el botón de ayuda en la barra de título
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
 
-        self.cargarCombobox = VentanaAgregar().cargar_combobox()
+        self.cargar_combobox()
 
         # fecha actual por defecto
         self.dateEdit_fecha_inauguracion.setDate(QDate.currentDate())
@@ -167,18 +167,71 @@ class VentanaEditar(QDialog):
         self.check_si.setChecked(False)
         self.lineEdit_precio_mejor.clear()
         obra = self.bd.seleccionar_obra(id)
+
         if len(obra) != 0:
             self.lineEdit_titulo_obra.insert(obra[1])
             self.lineEdit_Estilo.insert(obra[2])
             self.lineEdit_presio_salida.insert(str(obra[3]))
             self.comboBox_titulo_exposicion.setCurrentText(obra[4])
-            #self.check_sisetChecked()
-            self.lineEdit_precio_mejor.insert(str(obra[6]))
+            self.lineEdit_ci_artist.insert(str(obra[5]))
+            # checkbuttom 
+            vendido = str(obra[6]) # devuelve true o false
+            if vendido == "si":
+                self.check_si.setChecked(True)
+            else: 
+                self.check_si.setChecked(False)
+            
+            self.lineEdit_precio_mejor.insert(str(obra[7]))
             self.lineEdit_registro.text()
-
+        else:
+            r = "No pueden quedar campos vacíos"
+            QMessageBox.critical(None, "Error", r)
+        
 
     def editar_obra(self):
-        pass
+        id = self.lineEdit_registro.text()
+        titulo_obra = self.lineEdit_titulo_obra.text()
+        estilo = self.lineEdit_Estilo.text()
+        precio = self.lineEdit_presio_salida.text()
+        titulo_exposicion = self.comboBox_titulo_exposicion.currentText()
+        ci_artista = self.lineEdit_ci_artist.text()
+        mejor_precio = self.lineEdit_precio_mejor.text()
+         # checkbuttom 
+        vendido = self.check_si.isChecked() # devuelve true o false
+        if vendido:
+            self.valor = "si"
+        else: 
+           self.valor = "no"
+
+        if (id != "" and titulo_obra != "" and estilo != "" and precio != ""  
+            and titulo_exposicion != "" and ci_artista != "" and vendido != "" and mejor_precio != ""):
+            self.bd.actualizar_toda_obra(id, titulo_obra, estilo, precio, titulo_exposicion, ci_artista, self.valor, mejor_precio)
+            self.lineEdit_titulo_obra.clear()
+            self.lineEdit_Estilo.clear()
+            self.lineEdit_presio_salida.clear()
+            self.comboBox_titulo_exposicion.setCurrentIndex(-1)
+            self.lineEdit_ci_artist.clear()
+            self.check_si.setChecked(False)
+            self.lineEdit_precio_mejor.clear()
+            r = "La obra {} ha sido actualizada".format(id)
+            QMessageBox.information(None, "Éxito", r)
+
+
+    def cargar_combobox(self):
+        datos_exposicion = self.bd.mostrar_tabla("Exposición")
+        indice_titulo_exposicion = datos_exposicion[0].index("Título_expo")
+        exposicion = [item[indice_titulo_exposicion] for item in datos_exposicion[1]]
+        print(indice_titulo_exposicion)
+
+        # Limpiar elementos previos en el ComboBox antes de volver a cargar
+        self.comboBox_titulo_exposicion.clear()
+
+        # Agregar datos al ComboBox
+        self.comboBox_titulo_exposicion.addItem('')
+        self.comboBox_titulo_exposicion.addItems(exposicion)
+
+
+    
 
 
 '''if __name__ == '__main__':
