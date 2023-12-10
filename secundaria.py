@@ -1,11 +1,12 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QComboBox,  QMessageBox
+from PyQt5.QtWidgets import QApplication, QDialog, QComboBox,  QMessageBox
 from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtCore import Qt, QDate
 from PyQt5.uic import loadUi
 from  proyectoGaleríaOK.connSql import Galeria
 import sys
 
 
-class VentanaAgregar(QMainWindow):
+class VentanaAgregar(QDialog):
     def __init__(self):
         super(VentanaAgregar, self).__init__()
 
@@ -13,17 +14,21 @@ class VentanaAgregar(QMainWindow):
         loadUi('interfaz_agregar.ui', self)
         self.setWindowTitle('Agregar')
         # pagina que se muestra por defecto
-        self.stacked_widget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(0)
         self.bd = Galeria()
         self.cargar_combobox()
+        self.dateEdit_fecha_inauguracion.setDate(QDate.currentDate())
+        self.dateEdit_fecha_clausura.setDate(QDate.currentDate())
 
-        self.actionExposicion.triggered.connect(lambda: self.stacked_widget.setCurrentIndex(0))
-        self.actionArtista.triggered.connect(lambda: self.stacked_widget.setCurrentIndex(1))
-        self.actionObra.triggered.connect(lambda: self.stacked_widget.setCurrentIndex(2))
-        self.actionTelefono.triggered.connect(lambda: self.stacked_widget.setCurrentIndex(3))
-        
+        # Deshabilitar el botón de ayuda en la barra de título
+        self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
 
-    # botones aceptar y cancelar 
+        # Conecta la señal activated de tu QComboBox a la ranura (slot) mostrar_pagina
+        self.cb_tablas.activated.connect(self.mostrar_pagina)
+        items = ["Exposición", "Obra", "Artista", "Teléfono"]
+        self.cb_tablas.addItems(items)
+
+        # botones aceptar y cancelar 
         # telefono 
         self.bt_aceptar_telefono.clicked.connect(self.agregar_telefono)
         self.bt_cancelar_telefono.clicked.connect(lambda: self.close())
@@ -36,6 +41,13 @@ class VentanaAgregar(QMainWindow):
         # obra
         self.bt_aceptar_obra.clicked.connect(self.agregar_obra)
         self.bt_cancelar_obra.clicked.connect(lambda: self.close())
+
+    def mostrar_pagina(self, index):
+        # Encuentra el índice de la página que deseas mostrar
+        index_page = self.cb_tablas.findText(self.cb_tablas.currentText())
+        
+        self.stackedWidget.setCurrentIndex(index_page)
+        
     
     def agregar_telefono(self):
         ci = self.lineEdit_ci_artista.text()
@@ -83,23 +95,27 @@ class VentanaAgregar(QMainWindow):
         no = self.lineEdit_no.text()
         provincia = self.lineEdit_provincia.text()
         nacionalidad = self.lineEdit_nacionalidad.text()
-        if not ci.isdigit() or not no.isdigit():
-            r = "ci y no deben ser números enteros"
-            QMessageBox.critical(None, "Error", r)
-        elif type(provincia) != str and type(nacionalidad) != str:
-            r = "La provincia y la nacionalidad  son de tipo string"
-            QMessageBox.critical(None, "Error", r)
-        elif self.bd.existeArtista(ci):
-            r = "El artista ya existe"
-            QMessageBox.critical(None, "Error", r)
-        elif ci != "" and calle != "" and no != "" and provincia != "":
-            self.bd.insertar_artista(ci, calle, no, provincia, nacionalidad)
-            self.mensaje = QMessageBox.information(None, "Éxito", "El artista {} se agregó con éxito.".format(ci))
-            self.lineEdit_ci_Artista.clear()
-            self.lineEdit_calle.clear()
-            self.lineEdit_no.clear()
-            self.lineEdit_provincia.clear()
-            self.lineEdit_nacionalidad.clear()
+        print(type(provincia), type(nacionalidad))
+
+
+        if ci != "" and calle != "" and no != "" and provincia != "":
+            if not ci.isdigit()  or not no.isdigit():
+                r = "ci y no deben ser números enteros"
+                QMessageBox.critical(None, "Error", r)
+            elif type(provincia) != str and type(nacionalidad) != str:
+                r = "La provincia y la nacionalidad  son de tipo string"
+                QMessageBox.critical(None, "Error", r)
+            elif self.bd.existeArtista(ci):
+                r = "El artista ya existe"
+                QMessageBox.critical(None, "Error", r)
+            else:
+                self.bd.insertar_artista(ci, calle, no, provincia, nacionalidad)
+                self.mensaje = QMessageBox.information(None, "Éxito", "El artista {} se agregó con éxito.".format(ci))
+                self.lineEdit_ci_Artista.clear()
+                self.lineEdit_calle.clear()
+                self.lineEdit_no.clear()
+                self.lineEdit_provincia.clear()
+                self.lineEdit_nacionalidad.clear()
         else:
             QMessageBox.critical(None, "Error", "Rellene los campos vacíos")
 
@@ -118,32 +134,34 @@ class VentanaAgregar(QMainWindow):
             self.valor = "si"
         else: 
            self.valor = "no"
+        
+        if id != "" and titulo != "" and estilo != "" and precio != "" and ci_artista != "" and mejor_oferta != "":
 
-        if not id.isdigit() or not precio.isdigit() or not ci_artista.isdigit() or not mejor_oferta.isdigit():
-            r = "id, precio, ci artista, mejor oferta deben ser números enteros"
-            QMessageBox.critical(None, "Error", r)
-        elif type(titulo) != str:
-            r = "El título debe ser una cadena (string)"
-            QMessageBox.critical(None, "Error", r)
-        elif not self.bd.existeArtista(ci_artista):
-            r = "El artista con CI {} no existe".format(ci_artista)
-            QMessageBox.critical(None, "Error", r)
-        elif int(precio) <= 0 or int(mejor_oferta) <= 0:
-            r = "El precio de venta y el precio de la mejor oferta deben ser mayores que cero"
-            QMessageBox.critical(None, "Error", r)
+            if not id.isdigit() or not precio.isdigit() or not ci_artista.isdigit() or not mejor_oferta.isdigit():
+                r = "id, precio, ci artista, mejor oferta deben ser números enteros"
+                QMessageBox.critical(None, "Error", r)
+            elif type(titulo) != str:
+                r = "El título debe ser una cadena (string)"
+                QMessageBox.critical(None, "Error", r)
+            elif int(precio) <= 0 or int(mejor_oferta) <= 0:
+                r = "El precio de venta y el precio de la mejor oferta deben ser mayores que cero"
+                QMessageBox.critical(None, "Error", r)
+            elif self.bd.existeArtista(ci_artista):
+                self.bd.insertar_obra(id, titulo, estilo,precio , exposicion, ci_artista, self.valor, mejor_oferta)
+                self.mensaje = QMessageBox.information(None, "Éxito", "La obra {} se agregó con éxito.".format(id))
+
+                # Limpiar campos después de agregar la obra
+                self.lineEdit_registro.clear()
+                self.lineEdit_titulo_obra.clear()
+                self.lineEdit_Estilo.clear()
+                self.lineEdit_presio_salida.clear()
+                self.lineEdit_ci_artist.clear()
+                self.comboBox_titulo_exposicion.setCurrentIndex(-1)
+                self.check_si.setChecked(False)
+                self.lineEdit_precio_mejor.clear()
         else:
-            self.bd.insertar_obra(id, titulo, estilo,precio , exposicion, ci_artista, self.valor, mejor_oferta)
-            self.mensaje = QMessageBox.information(None, "Éxito", "La obra {} se agregó con éxito.".format(id))
+            QMessageBox.critical(None, "Error", "Rellene los campos vacíos")
 
-            # Limpiar campos después de agregar la obra
-            self.lineEdit_registro.clear()
-            self.lineEdit_titulo_obra.clear()
-            self.lineEdit_Estilo.clear()
-            self.lineEdit_presio_salida.clear()
-            self.lineEdit_ci_artist.clear()
-            self.comboBox_titulo_exposicion.setCurrentIndex(-1)
-            self.check_si.setChecked(False)
-            self.lineEdit_precio_mejor.clear()
 
     def cargar_combobox(self):
         datos_exposicion = self.bd.mostrar_tabla("Exposición")
@@ -162,9 +180,9 @@ class VentanaAgregar(QMainWindow):
     
 
 
-'''if __name__ == '__main__':
+if __name__ == '__main__':
     app = QApplication([])
-    ventana = Secundaria()
+    ventana = VentanaAgregar()
     ventana.show()
-    sys.exit(app.exec_())'''
+    sys.exit(app.exec_())
 

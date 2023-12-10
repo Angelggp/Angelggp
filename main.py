@@ -46,7 +46,7 @@ class Principal(QMainWindow):
         self.bt_acerca_de.clicked.connect(self.pag_acerca_de)
 
         # botones crud
-        self.bt_agregar.clicked.connect(lambda: VentanaAgregar().show())
+        self.bt_agregar.clicked.connect(lambda: VentanaAgregar().exec_())
         self.bt_eliminar.clicked.connect(lambda: VentanaEliminar().exec_())
         self.bt_editar.clicked.connect(lambda: VentanaEditar().exec_())
 
