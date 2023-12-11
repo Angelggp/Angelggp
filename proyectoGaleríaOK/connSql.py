@@ -840,6 +840,19 @@ class Galeria:
     
     
     def mostrar_tabla(self, nombre_tabla):
+
+        ''' 
+        Este método se encarga de mostrar toda la información de una tabla dada como parámetro  
+        de la base de datos Galería.db. 
+ 
+        Atributos: 
+            nombre_tabla(TEXT): nombre de la tabla que se desea conocer su información. 
+ 
+        Retorna: 
+            encabezado(list): es una lista con los nombres asignados a los campos de la tabla.             
+            data(list): es una lista con todos los valores de los campos. 
+        ''' 
+
         conn = sqlite3.connect("Galería.db")
         cursor = conn.cursor()
 

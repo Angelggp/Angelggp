@@ -180,9 +180,3 @@ class VentanaAgregar(QDialog):
     
 
 
-if __name__ == '__main__':
-    app = QApplication([])
-    ventana = VentanaAgregar()
-    ventana.show()
-    sys.exit(app.exec_())
-

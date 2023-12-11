@@ -134,6 +134,7 @@ class Principal(QMainWindow):
         # Verificar si el argumento es una instancia de QTableWidget
         if not isinstance(tabla, QtWidgets.QTableWidget):
             raise TypeError("El argumento debe ser un objeto QTableWidget")
+            
 
         # Definir la bandera que desactiva la edición
         flags = QtCore.Qt.ItemFlags(~QtCore.Qt.ItemIsEditable)

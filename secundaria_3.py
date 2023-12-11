@@ -215,6 +215,9 @@ class VentanaEditar(QDialog):
             self.lineEdit_precio_mejor.clear()
             r = "La obra {} ha sido actualizada".format(id)
             QMessageBox.information(None, "Éxito", r)
+        else:
+            r = "No pueden quedar campos vacíos"
+            QMessageBox.critical(None, "Error", r)
 
 
     def cargar_combobox(self):
@@ -234,8 +237,3 @@ class VentanaEditar(QDialog):
     
 
 
-'''if __name__ == '__main__':
-    app = QApplication([])
-    ventana = VentanaEditar()
-    ventana.show()
-    sys.exit(app.exec_())'''
