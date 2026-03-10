@@ -11,7 +11,7 @@ Soy un desarrollador apasionado por construir aplicaciones web completas, desde 
 **Lenguajes:** Python • JavaScript • TypeScript • HTML • CSS  
 **Backend:** Django • Django REST • FastAPI • Express • Node.js • Strapi CMS  
 **Frontend:** React • Next.js • Shadcn/ui • Tailwind CSS  
-**Bases de Datos:** PostgreSQL • MongoDB  
+**Bases de Datos:** PostgreSQL • MongoDB • SQLite
 **Herramientas:** Git • Github • Docker • Figma
 
 ---
@@ -39,6 +39,7 @@ Actualmente trabajo en el **Centro de Estudios Ambientales de Cienfuegos**, un c
 - **Portafolio:** [protfolio-three-chi.vercel.app](https://protfolio-three-chi.vercel.app)
 
 ---
+
 
 
 
