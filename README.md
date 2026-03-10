@@ -36,8 +36,9 @@ Actualmente trabajo en el **Centro de Estudios Ambientales de Cienfuegos**, un c
 - **Teléfono:** +53 51494186
 - **Ubicación:** Cienfuegos, Cuba
 - **GitHub:** [github.com/Angelggp](https://github.com/Angelggp)
-- **POrtafolio:** [protfolio-three-chi.vercel.app](https://protfolio-three-chi.vercel.app)
+- **Portafolio:** [protfolio-three-chi.vercel.app](https://protfolio-three-chi.vercel.app)
 
 ---
+
 
 
